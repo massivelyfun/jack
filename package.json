@@ -1,0 +1,26 @@
+{
+  "private": true,
+  "author": "Mason Browne <mason@massivelyfun.com> (http://massivelyfun.com/people/maseb)",
+  "name": "jack",
+  "description": "Jack, the JS Logger",
+  "version": "0.0.0",
+  "homepage": "http://massivelyfun.com/projects/jack",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/massivelyfun/jack.git"
+  },
+  "main": "lib-node/jack",
+  "scripts": {
+    "test": "cake test"
+  },
+  "engines": {
+    "node": "~0.6.1"
+  },
+  "dependencies": {
+    "coffee-script": "= 1.1.3"
+  },
+  "devDependencies": {
+    "mf-tools" : "0.0.0"
+  },
+  "optionalDependencies": {}
+}
