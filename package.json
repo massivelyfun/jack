@@ -20,7 +20,7 @@
     "coffee-script": "= 1.1.3"
   },
   "devDependencies": {
-    "mf-tools" : "0.0.0"
+    "mf-tools" : "git+ssh://git@github.com:massivelyfun/mf-tools.git"
   },
   "optionalDependencies": {}
 }
