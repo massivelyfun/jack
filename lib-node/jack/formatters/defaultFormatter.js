@@ -1,7 +1,18 @@
 (function() {
-  var DefaultFormatter, Logger;
+  var DefaultFormatter, LOG_LEVELS, REVERSE_MAP, k, levelName, v;
 
-  Logger = require("jack");
+  LOG_LEVELS = require("./../util/logLevels");
+
+  REVERSE_MAP = {};
+
+  for (k in LOG_LEVELS) {
+    v = LOG_LEVELS[k];
+    REVERSE_MAP["" + v] = k;
+  }
+
+  levelName = function(level) {
+    return REVERSE_MAP["" + level];
+  };
 
   DefaultFormatter = (function() {
 
@@ -23,7 +34,7 @@
         fmtArgs.push("" + ret);
       }
       n = new Date;
-      return "[" + (Logger.levelName(level)) + "][" + n + "]: " + loggerName + "> " + (fmtArgs.join("; ").replace(/\n/, "\\n"));
+      return "[" + (levelName(level)) + "][" + n + "]: " + loggerName + "> " + (fmtArgs.join("; ").replace(/\n/, "\\n"));
     };
 
     return DefaultFormatter;

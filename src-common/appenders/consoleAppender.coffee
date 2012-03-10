@@ -1,4 +1,4 @@
-Appender = require "./appenders/appender"
+Appender = require "./appender"
 
 class ConsoleAppender extends Appender
   append: (loggerName, level, args) ->

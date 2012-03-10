@@ -1,7 +1,7 @@
 (function() {
   var Appender, DefaultFormatter;
 
-  DefaultFormatter = require("jack/formatters/defaultFormatter");
+  DefaultFormatter = require("../formatters/defaultFormatter");
 
   Appender = (function() {
 

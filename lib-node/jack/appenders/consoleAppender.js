@@ -1,13 +1,12 @@
 (function() {
-  var Appender, ConsoleAppender,
-    __hasProp = Object.prototype.hasOwnProperty,
-    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor; child.__super__ = parent.prototype; return child; };
+  var Appender, ConsoleAppender;
+  var __hasProp = Object.prototype.hasOwnProperty, __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor; child.__super__ = parent.prototype; return child; };
 
-  Appender = require("jack/appenders/appender");
+  Appender = require("./appender");
 
-  ConsoleAppender = (function(_super) {
+  ConsoleAppender = (function() {
 
-    __extends(ConsoleAppender, _super);
+    __extends(ConsoleAppender, Appender);
 
     function ConsoleAppender() {
       ConsoleAppender.__super__.constructor.apply(this, arguments);
@@ -19,7 +18,7 @@
 
     return ConsoleAppender;
 
-  })(Appender);
+  })();
 
   module.exports = ConsoleAppender;
 

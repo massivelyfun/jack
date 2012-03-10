@@ -1,4 +1,12 @@
-Logger = require "../index"
+LOG_LEVELS = require "./../util/logLevels"
+
+REVERSE_MAP = {}
+
+for k,v of LOG_LEVELS
+  REVERSE_MAP[""+v] = k
+
+levelName = (level) ->
+  REVERSE_MAP[""+level]
 
 class DefaultFormatter
   format: (loggerName, level, args) ->
@@ -13,6 +21,6 @@ class DefaultFormatter
       fmtArgs.push "" + ret
 
     n = new Date
-    "[#{Logger.levelName level}][#{n}]: #{loggerName}> #{fmtArgs.join("; ").replace(/\n/, "\\n")}"
+    "[#{levelName level}][#{n}]: #{loggerName}> #{fmtArgs.join("; ").replace(/\n/, "\\n")}"
 
 module.exports = DefaultFormatter
