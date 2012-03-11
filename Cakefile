@@ -5,6 +5,7 @@ process.env["PATH"] = "node_modules/.bin:#{process.env["PATH"]}"
 baseDir = __dirname
 builds =
   "lib-node": ["src-common"]
+  "lib-web" : ["src-common"]
 
 task "build", "Convert CoffeeScript sources into JS files", ->
   for build, dirs of builds
