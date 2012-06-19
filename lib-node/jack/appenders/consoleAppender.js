@@ -14,7 +14,7 @@
       if (options == null) options = {};
       ConsoleAppender.__super__.constructor.call(this);
       this._buffer = [];
-      this._delta = (_ref = options.flushFrequency) != null ? _ref : 1500;
+      this._delta = (_ref = options.flushFrequency) != null ? _ref : 300;
       this._lastFlush = (+(new Date)) - (this._delta + 1);
     }
 
