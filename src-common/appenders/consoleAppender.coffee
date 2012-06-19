@@ -11,9 +11,9 @@ class ConsoleAppender extends Appender
     now = +new Date
     if (now - @_lastFlush) > @_delta
       @flush()
-      @_lastFlush = now
 
   flush: ->
+    @_lastFlush = +new Date
     while bit = @_buffer.shift()
       console.log @format(bit[0], bit[1], bit[2])
 

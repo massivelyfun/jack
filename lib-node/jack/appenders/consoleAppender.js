@@ -22,14 +22,12 @@
       var now;
       this._buffer.push([loggerName, level, args]);
       now = +(new Date);
-      if ((now - this._lastFlush) > this._delta) {
-        this.flush();
-        return this._lastFlush = now;
-      }
+      if ((now - this._lastFlush) > this._delta) return this.flush();
     };
 
     ConsoleAppender.prototype.flush = function() {
       var bit, _results;
+      this._lastFlush = +(new Date);
       _results = [];
       while (bit = this._buffer.shift()) {
         _results.push(console.log(this.format(bit[0], bit[1], bit[2])));
