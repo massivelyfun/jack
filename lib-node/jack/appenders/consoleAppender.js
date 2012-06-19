@@ -12,6 +12,7 @@
     function ConsoleAppender(options) {
       var _ref;
       if (options == null) options = {};
+      ConsoleAppender.__super__.constructor.call(this);
       this._buffer = [];
       this._delta = (_ref = options.flushFrequency) != null ? _ref : 1500;
       this._lastFlush = (+(new Date)) - (this._delta + 1);
@@ -21,7 +22,7 @@
       var now;
       this._buffer.push([loggerName, level, args]);
       now = +(new Date);
-      if (now - this._lastFlush > this._delta) return this.flush();
+      if ((now - this._lastFlush) > this._delta) return this.flush();
     };
 
     ConsoleAppender.prototype.flush = function() {
