@@ -11,6 +11,7 @@ class ConsoleAppender extends Appender
     now = +new Date
     if (now - @_lastFlush) > @_delta
       @flush()
+      @_lastFlush = now
 
   flush: ->
     while bit = @_buffer.shift()

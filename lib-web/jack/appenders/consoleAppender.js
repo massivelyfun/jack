@@ -22,7 +22,10 @@
       var now;
       this._buffer.push([loggerName, level, args]);
       now = +(new Date);
-      if ((now - this._lastFlush) > this._delta) return this.flush();
+      if ((now - this._lastFlush) > this._delta) {
+        this.flush();
+        return this._lastFlush = now;
+      }
     };
 
     ConsoleAppender.prototype.flush = function() {
