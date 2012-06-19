@@ -1,6 +1,6 @@
 (function() {
-  var LOG_LEVELS, Logger, LoggerUtil, REVERSE_MAP, k, v;
-  var __slice = Array.prototype.slice;
+  var LOG_LEVELS, Logger, LoggerUtil, REVERSE_MAP, k, v,
+    __slice = Array.prototype.slice;
 
   LOG_LEVELS = require("./util/logLevels");
 
