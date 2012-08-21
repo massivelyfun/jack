@@ -30,6 +30,7 @@ class Logger
   constructor: (@_name, @_parent) ->
     @_level = LOG_LEVELS.INFO
     @_appenders = []
+    @_filter = null
 
   addAppender: (appender) ->
     @_appenders.push appender
@@ -58,10 +59,14 @@ class Logger
   log: (level, args) ->
     @_append @_name, level, args
 
+  filter: (@_filter) ->
+
   _append: (origin, level, args) ->
-    if @_level != LOG_LEVELS.NONE and (level & @_level) == level
-      for appender in @_appenders
-        appender.append origin, level, args
+    doLog = if @_filter? then @_filter.test(origin) else true
+    if doLog
+      if @_level != LOG_LEVELS.NONE and (level & @_level) == level
+        for appender in @_appenders
+          appender.append origin, level, args
 
     if @_parent?
       @_parent._append origin, level, args

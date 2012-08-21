@@ -54,6 +54,7 @@
       this._parent = _parent;
       this._level = LOG_LEVELS.INFO;
       this._appenders = [];
+      this._filter = null;
     }
 
     Logger.prototype.addAppender = function(appender) {
@@ -102,13 +103,20 @@
       return this._append(this._name, level, args);
     };
 
+    Logger.prototype.filter = function(_filter) {
+      this._filter = _filter;
+    };
+
     Logger.prototype._append = function(origin, level, args) {
-      var appender, _i, _len, _ref;
-      if (this._level !== LOG_LEVELS.NONE && (level & this._level) === level) {
-        _ref = this._appenders;
-        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-          appender = _ref[_i];
-          appender.append(origin, level, args);
+      var appender, doLog, _i, _len, _ref;
+      doLog = this._filter != null ? this._filter.test(origin) : true;
+      if (doLog) {
+        if (this._level !== LOG_LEVELS.NONE && (level & this._level) === level) {
+          _ref = this._appenders;
+          for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+            appender = _ref[_i];
+            appender.append(origin, level, args);
+          }
         }
       }
       if (this._parent != null) return this._parent._append(origin, level, args);
