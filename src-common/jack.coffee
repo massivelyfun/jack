@@ -35,9 +35,17 @@ class Logger
   addAppender: (appender) ->
     @_appenders.push appender
     this
+
   level: (level) ->
     @_level = level
     this
+
+  getLevelName: ->
+    level = @_level
+    for k,v of LOG_LEVELS
+      if ((v << 0) == (level << 0))
+        return k
+    return "UNKNOWN"
 
   error: (args...) ->
     @log LOG_LEVELS.ERROR, args
