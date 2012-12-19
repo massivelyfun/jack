@@ -1,7 +1,7 @@
 {
   "name": "mf-jack",
   "description": "Jack, the JS Logger",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Mason Browne <mason@massivelyfun.com>",
   "contributors": [
     { "name": "Dean Hudson", "email": "dean@massivelyfun.com"},

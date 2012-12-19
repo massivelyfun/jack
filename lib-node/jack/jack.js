@@ -70,6 +70,16 @@
       return this;
     };
 
+    Logger.prototype.getLevelName = function() {
+      var k, level, v;
+      level = this._level;
+      for (k in LOG_LEVELS) {
+        v = LOG_LEVELS[k];
+        if ((v << 0) === (level << 0)) return k;
+      }
+      return "UNKNOWN";
+    };
+
     Logger.prototype.error = function() {
       var args;
       args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
