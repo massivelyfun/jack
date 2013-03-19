@@ -17,7 +17,8 @@
     LoggerUtil.prototype.LEVEL = LOG_LEVELS;
 
     LoggerUtil.prototype.appenders = {
-      ConsoleAppender: require("./appenders/consoleAppender")
+      ConsoleAppender: require("./appenders/consoleAppender"),
+      FileAppender: require("./appenders/fileAppender")
     };
 
     LoggerUtil.prototype.formatters = {
@@ -71,11 +72,13 @@
     };
 
     Logger.prototype.getLevelName = function() {
-      var k, level, v;
+      var level;
       level = this._level;
       for (k in LOG_LEVELS) {
         v = LOG_LEVELS[k];
-        if ((v << 0) === (level << 0)) return k;
+        if ((v << 0) === (level << 0)) {
+          return k;
+        }
       }
       return "UNKNOWN";
     };
