@@ -25,6 +25,7 @@ class FileAppender extends Appender
     @_buffer.push [loggerName, level, args]
     now = +new Date
     if (now - @_lastFlush) > @_delta
+      # bind locally rather than in the method def.
       process.nextTick => @flush()
 
   flush: ->
