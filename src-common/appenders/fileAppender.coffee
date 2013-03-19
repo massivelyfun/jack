@@ -21,6 +21,11 @@ class FileAppender extends Appender
       @flush()
       @_logFile.end()
 
+    process.on 'SIGHUP', =>
+      @flush()
+      @_logFile.end()
+      @_logFile = fs.createWriteStream(file, flags: 'a')
+
   append: (loggerName, level, args) ->
     @_buffer.push [loggerName, level, args]
     now = +new Date

@@ -33,6 +33,13 @@
         _this.flush();
         return _this._logFile.end();
       });
+      process.on('SIGHUP', function() {
+        _this.flush();
+        _this._logFile.end();
+        return _this._logFile = fs.createWriteStream(file, {
+          flags: 'a'
+        });
+      });
     }
 
     FileAppender.prototype.append = function(loggerName, level, args) {
