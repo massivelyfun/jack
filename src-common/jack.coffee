@@ -9,6 +9,7 @@ class LoggerUtil
   LEVEL: LOG_LEVELS
   appenders:
     ConsoleAppender: require "./appenders/consoleAppender"
+    FileAppender:   require "./appenders/fileAppender"
 
   formatters:
     DefaultFormatter: require "./formatters/defaultFormatter"
