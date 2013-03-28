@@ -21,6 +21,6 @@ class DefaultFormatter
       fmtArgs.push "" + ret
 
     n = new Date
-    "[#{levelName level}][#{n}]: #{loggerName}> #{fmtArgs.join("; ").replace(/\n/, "\\n")}"
+    "[#{levelName level}][#{n}]: #{loggerName}> #{fmtArgs.join("; ").replace(/\n/g, "\\n")}"
 
 module.exports = DefaultFormatter
