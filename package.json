@@ -1,7 +1,7 @@
 {
   "name": "mf-jack",
   "description": "Jack, the JS Logger",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "author": "Mason Browne <mason@massivelyfun.com>",
   "contributors": [
     { "name": "Dean Hudson", "email": "dean@massivelyfun.com"},
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git://github.com/massivelyfun/jack.git"
   },
-  "main": "lib-node/jack",
+  "main": "lib-node/mf-jack",
   "scripts": {
     "test": "cake test"
   },
