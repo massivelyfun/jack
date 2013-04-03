@@ -35,7 +35,7 @@
         fmtArgs.push("" + ret);
       }
       n = new Date;
-      return "[" + (levelName(level)) + "][" + n + "]: " + loggerName + "> " + (fmtArgs.join("; ").replace(/\n/, "\\n"));
+      return "[" + (levelName(level)) + "][" + n + "]: " + loggerName + "> " + (fmtArgs.join("; ").replace(/\n/g, "\\n"));
     };
 
     return DefaultFormatter;

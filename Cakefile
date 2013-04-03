@@ -10,7 +10,7 @@ builds =
 task "build", "Convert CoffeeScript sources into JS files", ->
   for build, dirs of builds
     new Builder(baseDir)
-      .libraryName("jack")
+      .libraryName("mf-jack")
       .buildName(build)
       .outputDir(build)
       .inputDirs((dir for dir in dirs)...)
