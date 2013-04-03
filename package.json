@@ -1,7 +1,7 @@
 {
   "name": "mf-jack",
   "description": "Jack, the JS Logger",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "author": "Mason Browne <mason@massivelyfun.com>",
   "contributors": [
     { "name": "Dean Hudson", "email": "dean@massivelyfun.com"},
@@ -22,8 +22,8 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "coffee-script": "~ 1.4.0",
-    "mf-tools" : "~ 0.1"
+    "coffee-script": "~ 1.6.1",
+    "mf-tools" : "~ 0.1.5"
   },
   "optionalDependencies": {}
 }

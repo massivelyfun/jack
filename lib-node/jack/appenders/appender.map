@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "appender.js",
+  "sourceRoot": "../../..",
+  "sources": [
+    "src-common/appenders/appender.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;CAAA,KAAA,oBAAA;;CAAA,CAAA,CAAmB,IAAA,SAAnB,gBAAmB;;CAAnB,CAEM;CACS,EAAA,CAAA,cAAA;AACG,CAAd,EAAc,CAAb,EAAD,IAAA,MAAA;CADF,IAAa;;CAAb,CAGqB,CAAb,CAAA,CAAA,CAAR,GAAS,CAAD;CACL,CAA8B,EAA9B,CAAD,CAAA,IAAW,GAAX;CAJF,IAGQ;;CAHR,CAMqB,CAAb,CAAA,CAAA,CAAR,GAAS,CAAD;CACN,GAAU,CAAA,OAAA,MAAA;CAPZ,IAMQ;;CANR;;CAHF;;CAAA,CAYA,CAAiB,GAAX,CAAN,CAZA;CAAA"
+}
